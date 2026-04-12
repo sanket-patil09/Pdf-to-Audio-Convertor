@@ -1,0 +1,428 @@
+/*--------------------------------------------------------------
+General Section
+--------------------------------------------------------------*/
+*::selection{
+  color: #fff!important;
+  background-color: #000!important;
+}
+
+/*--------------------------------------------------------------
+Header Section
+--------------------------------------------------------------*/
+header {
+    /* background-color: #333; */
+}
+
+/*--------------------------------------------------------------
+# main
+--------------------------------------------------------------*/
+#pdf-to-audio-main{
+  min-height: 100vh;
+  width: 100%;
+  background-color:#fff;
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 15px 0;
+    background: whitesmoke;
+    min-height: 40px;
+    margin-top: 74px;
+}
+
+.breadcrumbs h2 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs ol li+li {
+    padding-left: 10px;
+}
+.breadcrumbs ol li a{
+  font-weight: 600;
+}
+
+.breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #2f2f2f;
+    content: "/";
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs {
+        margin-top: 68px;
+    }
+
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+
+    .breadcrumbs ol {
+        display: block;
+    }
+
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+}
+
+/*--------------------------------------------------------------
+# pdf-to-audio-page1
+--------------------------------------------------------------*/
+#pdf-to-audio-page1{
+  height: 75vh;
+  width: 100%;
+  /* background-color: #fff; */
+  font-size: 13vw;
+  letter-spacing: -10px;
+  line-height: 170px;
+  font-weight: bold;
+  color: #000;
+  /* position: relative; */
+  
+}
+#convert-text{
+  position: absolute;
+  left: 20%;
+  top: 25%;
+}
+
+#text-pdf{
+  position: absolute;
+  left: 15%;
+  bottom: 25%;
+}
+
+#arrow-text{
+  position: absolute;
+  left: 40%;
+  bottom: 25%;
+}
+
+#audio-text{
+  position: absolute;
+  right: 10%;
+  bottom: 25%;
+}
+
+/* display none to text page1 for mobile  */
+
+@media (max-width:700px) {
+  #pdf-to-audio-page1{
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# pdf-to-audio-page2 Converter Section
+--------------------------------------------------------------*/
+#converter-section {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#preview {
+    width: 100%;
+    height: 90vh;
+    display: none;
+    transition: 2s ease-in-out;
+    margin-bottom: 10%;
+    border-radius: 30px;
+}
+
+/*--------------------------------------------------------------
+# Drag and Drop file
+--------------------------------------------------------------*/
+
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    min-width: 50vw;
+    cursor: pointer;
+    background-color: #cacac8;
+    border-radius: 10px;
+    z-index: 100;
+}
+#cloud-upload-icon{
+    color: #00bcd4;
+    font-size: 100px;
+    margin-top: -4%;
+    margin-bottom: -4%;
+}
+.drop-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    margin: 5%;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+
+  }
+  
+  .drop-container:hover,
+  .drop-container.drag-active {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-container:hover .drop-title,
+  .drop-container.drag-active .drop-title {
+    color: #222;
+  }
+  
+  .drop-title , .drop-title-foot{
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+  .drop-title-foot{
+    color: #0d45a5;
+  }
+  .drop-title-foot:hover{
+    color: #0a3a8f;
+  }
+  
+  input[type=file] {
+    width: 350px;
+    max-width: 100%;
+    padding: 0 120px;
+    padding-top: 10px;
+    color: #0a3a8f;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  input[type=file]::file-selector-button {
+    display: none;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+  
+
+  @media (max-width: 992px) {
+
+    #cloud-upload-icon{
+      color: #00bcd4;
+      font-size: 70px;
+      margin-top: -4%;
+      margin-bottom: -4%;
+    }
+    .drop-title , .drop-title-foot{
+      font-size: 15px;
+    }
+    #drop-area{
+      max-width: 350px;
+    }
+    .component-row{
+      width: 100%!important;
+      font-size: 10px!important;
+    }
+    .button-82-front{
+      font-size: 15px!important;
+    }
+    input[type=file] {
+      padding: 0 27%;
+    }
+  .select-voices-main-container i {
+    right: 9%!important;
+    font-size: 20px!important;
+  }
+  }
+/*  All Buttons Row */
+
+.component-row{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.select-voices-main-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.select-voices-main-container i{
+  position: absolute;
+  right:7%;
+  font-size: 25px;
+}
+
+#select-voice{
+  flex: 1;
+  color: #fff;
+  background-color: #403d84;
+  width: 100%;
+  padding: 20px;
+  outline: 0;
+  border: 0;
+  border-radius: 35px;
+  margin: 20px;
+  appearance: none;
+}
+@media (max-width: 992px) {
+  .select-voices-main-container{
+    width: 80%;
+  }
+  #select-voice{
+    width: 80%;
+  }
+}
+
+/* btn rows */
+.btn-row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+  z-index: 100;
+}
+#pause-resume-btn-row{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+/* buttons */
+#convertBtn{
+  width: 75%;
+}
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* footer container */
+.footer-top .container .row{
+  justify-content: space-around;
+}

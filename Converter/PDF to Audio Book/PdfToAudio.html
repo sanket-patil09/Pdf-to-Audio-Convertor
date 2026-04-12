@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFShift - PDF to Audio (Speech)</title>
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- ======= PdfToAudio.css  ======= -->
+    <link rel="stylesheet" href="PdfToAudio.css">
+
+    <!-- my style.css -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="TextToAudio.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Starting of Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-lg-between">
+            <h1 class="logo me-auto me-lg-0"><a href="../../index.php">PDFShift<span>.</span></a></h1>
+
+            <!-- ======= Starting of Navbar ======= -->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto" href="../../index.php">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../../index.php#about">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="../../index.php#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="../../index.php#testimonials">Testimonials</a></li>
+                    <li class="dropdown"><a><span class="">PDF Converters</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li class="active"><a href="#">PDF to AudioBook / Speech</a></li>
+                            <li><a href="../../Converter/TextToAudio/TextToAudio.html">Text to Speech / Audio</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="../../index.php#contact">Contact Us</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav> <!-- End of Navbar -->
+
+        </div>
+    </header> <!-- End of Header -->
+
+
+
+    <!-- ======= Main Section Starts ======= -->
+    <main id="pdf-to-audio-main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs" data-aos="fade-down">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>AudioBook Converter</h2>
+                    <ol>
+                        <li><a href="../../index.php">Home</a></li>
+                        <li>PDF to AudioBook</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Starting of Cursor div ======= -->
+        <div id="main-cursor"></div> <!-- End of Cursor div   -->
+
+        <div id="pdf-to-audio-page1">
+            <span data-aos="zoom-in" id="convert-text">CONVERT</span><br>
+            <span data-aos="fade-right" id="text-pdf">PDF </span>
+            <span data-aos="zoom-in" id="arrow-text"><i class="ri-arrow-right-line"></i></span>
+            <span data-aos="fade-left" id="audio-text">Audio</span>
+        </div>
+
+        <!-- ======= PDF to AudioBook Converter Section Starts ======= -->
+        <div id="pdf-to-audio-page2">
+            <div id="converter-section">
+                <div id="drop-area" data-aos="zoom-in">
+                    <label for="pdfInput" class="drop-container" id="dropcontainer">
+                        <i class="ri-upload-cloud-fill" id="cloud-upload-icon"></i>
+                        <span class="drop-title">Drag & Drop to Upload File</span>
+                        OR
+                        <span class="drop-title-foot">Browse File</span>
+                        <input type="file" id="pdfInput" accept=".pdf" required>
+                    </label>
+                </div>
+
+                <div class="component-row">
+                    <div class="select-voices-main-container" data-aos="fade-left">
+                        <select name="" id="select-voice" style="opacity:0;">
+                            
+                        </select>
+                        <i class="ri-arrow-down-s-line" style="color: white;"></i>
+                    </div>
+                    <div class="btn-row">
+                        <button class="button-82-pushable" id="convertBtn" role="button" data-aos="fade-right">
+                            <span class="button-82-shadow"></span>
+                            <span class="button-82-edge"></span>
+                            <span class="button-82-front text">
+                                Convert to Audio
+                            </span>
+                        </button>
+                        <div id="pause-resume-btn-row">
+                            <button class="button-82-pushable" id="pauseSynthesis" role="button" data-aos="fade-down">
+                                <span class="button-82-shadow"></span>
+                                <span class="button-82-edge"></span>
+                                <span class="button-82-front text">
+                                    Pause
+                                </span>
+                            </button>
+                            <button class="button-82-pushable" id="resumeBtn" role="button" data-aos="fade-down">
+                                <span class="button-82-shadow"></span>
+                                <span class="button-82-edge"></span>
+                                <span class="button-82-front text">
+                                    Resume
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="pdf-to-audio-page3">
+            <div class="container" data-aos="fade-up" data-aos-anchor-placement="center-center">
+                <!-- Preview of the selected PDF -->
+                <iframe id="preview" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- End Conveter Section  -->
+
+    </main><!-- End Main Section  -->
+
+
+    <!-- ======= Preloader ======= -->
+    <div id="preloader"></div>
+    <!-- End of Preloader  -->
+
+    <!-- ======= Back to Top ======= -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <!-- End of Back to Top  -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6" id="footer-info-parent">
+                        <div class="footer-info">
+                            <h3>PDFShift<span>.</span></h3>
+                            <p>
+                                Government Polytechnic Nashik <br>
+                                Nashik 422 101, Maharashtra<br><br>
+                                <strong>Phone:</strong> +91 9607473987<br>
+                                <strong>Email:</strong> pdfshift@gmail.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul id="userful-links-ul">
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../index.php">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#about">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#testimonials">Testimonials</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#FAQs">FAQ's</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul id="our-services-ul">
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">PDF-to-AudioBook (Speech)</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../TextToAudio/TextToAudio.html">Text-to-Audio Conversion</a></li>
+                        
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>PDFShift</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by TY IF</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+
+    <!-- ======= Vendor JS Files ======= -->
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- ======= GSAP cdn ======= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- ======= Scroll Trigger cdn ======= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- ======= PDF JS ======= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+
+    <!-- ======= My Script ======= -->
+    <script src="../../js/script.js"></script>
+
+    <!-- ======= My Script ======= -->
+    <script src="PdfToAudio.js"></script>
+</body>
+
+</html>
